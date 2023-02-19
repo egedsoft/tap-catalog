@@ -15,3 +15,5 @@ spec:
     - ./systems/yelb-system.yaml
     - ./resources/yelb-db-resource.yaml
     - ./domains/cloudapps-domain.yaml
+    - ./components/demo-20.yaml
+    
