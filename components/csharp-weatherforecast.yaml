@@ -72,7 +72,7 @@ spec:
           description: Auto generated using Swagger Inspector
           parameters:
             - name: name
-              in: query
+              in: path
               schema:
                 type: string
               example: any_name
