@@ -50,7 +50,7 @@ metadata:
   name: csharp-weatherforecast-api
   description: The demo API for Tanzu Developer Portal
   links:
-    - url: https://api.agify.io
+    - url: https://csharp-weatherforecast.default.tap.wizards.lab/swagger
       title: API Definition
       icon: docs
 spec:
@@ -65,7 +65,7 @@ spec:
       description: defaultDescription
       version: '0.1'
     servers:
-      - url: https://api.agify.io
+      - url: https://csharp-weatherforecast.default.tap.wizards.lab/swagger
     paths:
       /:
         get:
