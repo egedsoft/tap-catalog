@@ -28,25 +28,6 @@ spec:
   owner: demo-team
   system: csharp-weatherforecast
 
----
-
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: csharp-weatherforecast-2
-  description: Demo Application's Microservice-2
-  tags:
-    - microservice
-  annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=csharp-weatherforecast'
-    'backstage.io/techdocs-ref': dir:.
-spec:
-  type: service
-  consumesApis:
-   - csharp-weatherforecast-api
-  lifecycle: alpha
-  owner: demo-team
-  system: csharp-weatherforecast
 
 ---
 
