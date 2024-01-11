@@ -65,9 +65,9 @@ spec:
       description: defaultDescription
       version: '0.1'
     servers:
-      - url: https://csharp-weatherforecast.default.tap.wizards.lab/swagger
+      - url: https://csharp-weatherforecast.default.tap.wizards.lab
     paths:
-      /:
+      /WeatherForecast:
         get:
           description: Auto generated using Swagger Inspector
           parameters:
