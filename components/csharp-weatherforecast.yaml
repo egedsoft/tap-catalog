@@ -75,7 +75,7 @@ spec:
               in: query
               schema:
                 type: string
-              example: type_any_name
+              example: any_name
           responses:
             '200':
               description: Auto generated using Swagger Inspector
