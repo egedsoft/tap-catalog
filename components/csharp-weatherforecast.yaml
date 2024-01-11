@@ -1,24 +1,7 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: csharp-weatherforecast
-  annotations:
-    "backstage.io/kubernetes-label-selector": "app.kubernetes.io/part-of=csharp-weatherforecast"
-spec:
-  type: service
-  lifecycle: experimental
-  owner: default-team
-  system: example-system
-  providesApis: # list of APIs provided by the Component
-    - demo-app
-  consumesApis: # list of APIs consumed by the Component
-    - demo-app 
-
-
-apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
-  name: demo-domain
+  name: csharp-weatherforecast-domain
   description: Demo Domain for Tanzu Application Platform
   annotations:
     'backstage.io/techdocs-ref': dir:.
@@ -30,60 +13,60 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: demo-app-ms-1
+  name: csharp-weatherforecast
   description: Demo Application's Microservice-1
   tags:
     - microservice
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=demo-app-ms-1'
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=csharp-weatherforecast'
     'backstage.io/techdocs-ref': dir:.
 spec:
   type: service
   providesApis:
-   - demo-app
+   - csharp-weatherforecast-api
   lifecycle: alpha
   owner: demo-team
-  system: demo-app
+  system: csharp-weatherforecast
 
 ---
 
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: demo-app-ms-2
+  name: csharp-weatherforecast-2
   description: Demo Application's Microservice-2
   tags:
     - microservice
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=demo-app-ms-2'
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=csharp-weatherforecast'
     'backstage.io/techdocs-ref': dir:.
 spec:
   type: service
   consumesApis:
-   - demo-api
+   - csharp-weatherforecast-api
   lifecycle: alpha
   owner: demo-team
-  system: demo-app
+  system: csharp-weatherforecast
 
 ---
 
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
-  name: demo-app
+  name: csharp-weatherforecast
   description: Demo Application for Tanzu Application Platform
   annotations:
     'backstage.io/techdocs-ref': dir:.
 spec:
   owner: demo-team
-  domain: demo-domain
+  domain: csharp-weatherforecast-domain
 
 ---
 
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: demo-api
+  name: csharp-weatherforecast-api
   description: The demo API for Tanzu Developer Portal
   links:
     - url: https://api.agify.io
@@ -93,7 +76,7 @@ spec:
   type: openapi
   lifecycle: experimental
   owner: demo-team
-  system: demo-app # Or specify system name of your choice
+  system: csharp-weatherforecast # Or specify system name of your choice
   definition: |
     openapi: 3.0.1
     info:
@@ -119,4 +102,4 @@ spec:
                 application/json; charset=utf-8:
                   schema:
                     type: string
-                  examples: {}    
+                  examples: {}
