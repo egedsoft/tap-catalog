@@ -17,5 +17,6 @@ spec:
     - ./domains/cloudapps-domain.yaml
     - ./components/demo-20.yaml
     - ./components/tanzu-java-web-app.yaml
+    - ./components/csharp-weatherforecast.yaml
     
     
