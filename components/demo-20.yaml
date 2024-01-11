@@ -17,3 +17,8 @@ spec:
   type: service
   lifecycle: experimental
   owner: default-team
+  system: example-system
+  providesApis: # list of APIs provided by the Component
+    - example-api-1
+  consumesApis: # list of APIs consumed by the Component
+    - example-api-2  
